@@ -1,0 +1,518 @@
+
+package rules
+import  com.sample.Restoran;
+ 
+//import com.sample.DroolsTest.Message;
+ 
+ 
+rule "Restoran koji se preporucuje je Campania Pizza"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Italijanska",opstina=="Novi Beograd",parking=="Da, ima parking" ,petfrendly=="Ne",
+   pogled=="---", placanje=="Kes")
+   then
+   r.setRestoran("Campania Pizza");
+   update(r);
+   
+   
+end 
+
+//pravilo2
+rule "Restoran koji se preporucuje je Pizza Bar"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Italijanska",opstina=="Novi Beograd" ,parking=="Da",petfrendly=="Da",
+   pogled=="---", placanje=="Kes")
+   then
+   r.setRestoran("Pizza Bar");
+   update(r);
+   
+   
+end 
+
+//pravilo 3
+rule "Restoran koji se preporucuje je Andrea Mia"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Italijanska",opstina=="Novi Beograd",parking=="Da",petfrendly=="Ne",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Andrea Mia");
+   update(r);
+   
+   
+end 
+
+//pravilo 4
+
+rule "Restoran koji se preporucuje je Gabbiano"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Italijanska",opstina=="Novi Beograd",parking=="Ne",petfrendly=="Da",
+    placanje=="vise od 1000")
+   then
+   r.setRestoran("Gabbiano");
+   r.setPogled("Reka");
+   update(r);
+   
+   
+end 
+
+//pravilo 5
+
+rule "Restoran koji se preporucuje je Bella Napoli"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Italijanska",opstina=="Zemun",parking=="Da",petfrendly=="Da",
+   pogled=="Park", placanje=="Kartica")
+   then
+   r.setRestoran("Bella Napoli");
+   update(r);
+   
+   
+end 
+
+//pravilo 6
+
+rule "Restoran koji se preporucuje je Talas New Wave"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Spanska",opstina=="Novi Beograd",parking=="Da",petfrendly=="Ne",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Talas New Wave");
+   update(r);
+   
+  
+end 
+
+//pravilo 7
+
+rule "Restoran koji se preporucuje je Godo "
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Spanska",opstina=="Novi Beograd",parking=="Da",petfrendly== "Da",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Godo");
+   update(r);
+   
+   
+end 
+
+//8
+rule "Restoran koji se preporucuje je Buena Vida"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Spanska",opstina=="Novi Beograd",parking=="Ne",petfrendly=="Ne",
+   pogled=="Park", placanje=="Kartica")
+   then
+   r.setRestoran("Buena Vida");
+   update(r);
+   
+   
+end 
+
+//9
+rule "Restoran koji se preporucuje je Magelan"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Spanska",opstina=="Novi Beograd",parking=="Da",petfrendly=="Da",
+   pogled=="Reka", placanje=="Kartica")
+   then
+   r.setRestoran("Magelan");
+   update(r);
+   
+   
+end 
+//10
+rule "Restoran koji se preporucuje je Despacito"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Spanska",opstina=="Novi Beograd",parking=="Ne",petfrendly=="Da",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Despacito");
+   update(r);
+   
+   
+end 
+
+//11
+rule "Restoran koji se preporucuje je Semlin Art"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Spanska",opstina=="Zemun",parking=="Da",petfrendly=="Da",
+   pogled=="---", placanje=="Kes")
+   then
+   r.setRestoran("Semlin Art");
+   update(r);
+   
+   
+end 
+
+//12
+rule "Restoran koji se preporucuje je Amfora"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Spanska",opstina=="Zemun",parking=="Ne",petfrendly=="Da",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Amfora");
+   update(r);
+   
+end 
+
+//13
+rule "Restoran koji se preporucuje je Zapata Rio"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Spanska",opstina=="Zemun",parking=="Da",petfrendly=="Ne",
+   pogled=="Park" || pogled== "Reka", placanje=="Kes")
+   then
+   r.setRestoran("Zapata Rio");
+   update(r);
+   
+end 
+
+//14
+
+rule "Restoran koji se preporucuje je Put oko Sveta"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Kineska",opstina=="Novi Beograd",parking=="Da",petfrendly=="Da",
+   pogled=="Reka"|| pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Put oko Sveta");
+   update(r);
+  
+end 
+
+//15
+
+rule "Restoran koji se preporucuje je Kaldi"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Kineska",opstina=="Novi Beograd",parking=="Da",petfrendly=="Ne",
+   pogled=="Park"|| pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Kaldi");
+   update(r);
+   
+end 
+
+//16
+
+rule "Restoran koji se preporucuje je Shangrila"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Kineska",opstina=="Novi Beograd",parking=="Ne",petfrendly=="Da",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Shangrila");
+   update(r);
+   
+end 
+
+//17
+rule "Restoran koji se preporucuje je 369"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Kineska",opstina=="Novi Beograd",parking=="Da",petfrendly=="Da",
+   pogled=="Park", placanje=="Kartica")
+   then
+   r.setRestoran("369");
+   update(r);
+   
+end 
+
+//18
+rule "Restoran koji se preporucuje je Salon5"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Kineska",opstina=="Zemun",parking=="Da",petfrendly=="Da",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Salon5");
+   update(r);
+   
+end 
+
+// 19
+rule "Restoran koji se preporucuje je Candy Square"
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Kineska",opstina=="Zemun",parking=="Da",petfrendly=="Ne",
+   pogled=="Park", placanje=="Kartica")
+   then
+   r.setRestoran("Candy Square");
+   update(r);
+   
+end 
+
+//20
+rule "Restoran koji se preporucuje je Ze i Z "
+   when
+   r:Restoran(vrstaKuhinje=="Internacionalna",podvrstaKuhinje=="Kineska",opstina=="Zemun",parking=="Ne",petfrendly=="Ne",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Ze i Z");
+   update(r);
+   
+end 
+
+//21
+
+rule "Restoran koji se preporucuje je So i Biber "
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Rostilj",opstina=="Novi Beograd",parking=="Ne",petfrendly=="Ne",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("So i Biber");
+   update(r);
+   
+end 
+
+//22  
+
+rule "Restoran koji se preporucuje je Karavan Express"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Rostilj",opstina=="Novi Beograd",parking=="Da",petfrendly=="Ne",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Karavan Express");
+   update(r);
+   
+end 
+
+//23   proveri
+rule "Restoran koji se preporucuje je Gvero" 
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Rostilj",opstina=="Novi Beograd",parking=="Ne",petfrendly=="Da",
+   pogled=="Park", placanje=="Kartica")
+   then
+   r.setRestoran("Gvero");
+   update(r);
+   
+end 
+
+//24  proveri
+rule "Restoran koji se preporucuje je Sraf"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Rostilj",opstina=="Novi Beograd",parking=="Da",petfrendly=="Da",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Sraf");
+   update(r);
+      
+end 
+
+//25 proveri 
+rule "Restoran koji se preporucuje je Zlatnik"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Rostilj",opstina=="Zemun",parking=="Ne",petfrendly=="Ne",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Zlatnik");
+   update(r);
+     
+end 
+
+//26 proveri
+rule "Restoran koji se preporucuje je Reka"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Rostilj",opstina=="Zemun",parking=="Da",petfrendly=="Ne",
+   pogled=="Reka", placanje=="Kartica")
+   then
+   r.setRestoran("Reka");
+   update(r);
+   
+     
+end 
+
+//27 proveri
+
+rule "Restoran koji se preporucuje je Stara srpska kuca"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Kuvana jela",opstina=="Novi Beograd",parking=="Da",petfrendly=="Da",
+   pogled=="Park", placanje=="Kartica")
+   then
+   r.setRestoran("Stara srpska kuca");
+   update(r);
+   
+     
+end 
+
+
+//28 proveri
+
+rule "Restoran koji se preporucuje je Stara koliba"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Kuvana jela",opstina=="Novi Beograd",parking=="Da",petfrendly=="Ne",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Stara koliba");
+   update(r);
+   
+  
+end 
+
+//29 proveri
+
+rule "Restoran koji se preporucuje je Suvenir"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Kuvana jela",opstina=="Novi Beograd",parking=="Ne",petfrendly=="Da",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Suvenir");
+   update(r);
+   
+   
+end 
+
+//30 proveri
+
+rule "Restoran koji se preporucuje je Jezero"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Kuvana jela",opstina=="Novi Beograd",parking=="Ne",petfrendly=="Ne",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Jezero");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Ciri bu ciri ba"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Kuvana jela",opstina=="Zemun",parking=="Ne",petfrendly=="Ne",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Ciri bu ciri ba");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Rakia Bar"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Kuvana jela",opstina=="Zemun",parking=="Da",petfrendly=="Ne",
+   pogled=="Park", placanje=="Kartica")
+   then
+   r.setRestoran("Rakia Bar");
+   update(r);
+     
+end
+
+
+rule "Restoran koji se preporucuje je Splav Amsterdam"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Kuvana jela",opstina=="Zemun",parking=="Ne",petfrendly=="Da",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Splav Amsterdam");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Reka1"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Kuvana jela",opstina=="Zemun",parking=="Da",petfrendly=="da",
+   pogled=="Reka", placanje=="Kartica")
+   then
+   r.setRestoran("Reka1");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Rodizio"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Pecenje",opstina=="Novi Beograd",parking=="Ne",petfrendly=="Ne",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Rodizio");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Durmitor"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Pecenje",opstina=="Novi Beograd",parking=="Da",petfrendly=="Da",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Durmitor");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Dren"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Pecenje",opstina=="Novi Beograd",parking=="Da",petfrendly=="Ne",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Dren");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Ruzo moja"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Pecenje",opstina=="Novi Beograd",parking=="Ne",petfrendly=="Da",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Ruzo moja");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Taverna Jakovljevic"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Pecenje",opstina=="Novi Beograd",parking=="Da",petfrendly=="Ne",
+   pogled=="Reka", placanje=="Kartica")
+   then
+   r.setRestoran("Jezero");
+   update(r);
+      
+end
+
+rule "Restoran koji se preporucuje je Institucija"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Pecenje",opstina=="Novi Beograd",parking=="Da",petfrendly=="Da",
+   pogled=="Park", placanje=="Kartica")
+   then
+   r.setRestoran("Institucija");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Brener"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Pecenje",opstina=="Zemun",parking=="Ne",petfrendly=="Ne",
+   pogled=="Park", placanje=="Kes")
+   then
+   r.setRestoran("Brener");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Balkan Express"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Pecenje",opstina=="Zemun",parking=="Da",petfrendly=="Ne",
+   pogled=="Reka", placanje=="Kartica")
+   then
+   r.setRestoran("Balkan Express");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Salas 034"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Pecenje",opstina=="Zemun",parking=="Da",petfrendly=="Da",
+   pogled=="Reka", placanje=="Kes")
+   then
+   r.setRestoran("Salas 034");
+   update(r);
+      
+end
+
+
+rule "Restoran koji se preporucuje je Saran"
+   when
+   r:Restoran(vrstaKuhinje=="Nacionalna",podvrstaKuhinje=="Pecenje",opstina=="Zemun",parking=="Ne",petfrendly=="Da",
+   pogled=="Park", placanje=="Kartica")
+   then
+   r.setRestoran("Salas 034");
+   update(r);
+      
+end
+
